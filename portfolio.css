@@ -13,8 +13,8 @@ html {
   font-size: 12px;
   box-sizing: border-box;
   scroll-behavior: smooth;
-  color: #495464;
-  background:#aee6e6;
+  color: #BFD7ED;
+  background:#0074B7;
 }
 
 #landing-page{
@@ -22,11 +22,14 @@ html {
 }
 a {
   text-decoration: none;
-  color: #AC58FA;
+  color:#59D7EE;
 }
 
 a:hover {
   color: #fcf876;
+}
+.btn:hover{
+   color:#a7e72e
 }
 
 ul {
@@ -79,7 +82,7 @@ nav {
   margin: 5px 0;
   background: linear-gradient(
     135deg,
-    #AC58FA,
+    #60A3D9,
     rgb(255, 255, 255) 100%
   );
 }
@@ -89,7 +92,7 @@ nav {
   height: 3px;
   background: linear-gradient(
     135deg,
-    #AC58FA,
+    #60A3D9,
     rgb(255, 255, 255) 100%
   );
 }
@@ -101,7 +104,7 @@ nav {
   margin-left: 15px;
   background: linear-gradient(
     135deg,
-    #AC58FA,
+    #60A3D9,
     rgb(255, 255, 255) 100%
   );
 }
@@ -199,7 +202,7 @@ nav {
   height: 100vh;
   background: linear-gradient(
       135deg,
-      #87CEEB,
+      #003B73,
       rgba(135,206,250,0.5) 100%
     ),
     url("images/webdev.webp") center no-repeat;
@@ -309,7 +312,7 @@ nav {
 .about {
   width: 100%;
   min-height: 100vh;
-  max-width: 70rem;
+  max-width: 90rem;
   margin: auto;
 }
 
@@ -320,11 +323,11 @@ nav {
 }
 
 .about-img img {
-  height: 12rem;
+  height: 20rem;
   width: auto;
-  border-radius: 60%;
+  border-radius: 50%;
   margin: 2rem;
-  box-shadow: 0 20px 30px 0 rgba(0, 255, 255, 0.15);
+  box-shadow: 5px 5px 5px 0 #91C1D8;
 }
 
 .about-text-box {
@@ -350,14 +353,12 @@ hr {
   margin: 4rem 0;
   background: linear-gradient(
     to right,
-    #AC58FA,
+    #60A3D9,
     #b8de6f
   );
   border: 0;
   height: 3px;
 }
-
-/* Services */
 
 .title-heading h1 {
   font-size: 6em;
@@ -376,9 +377,9 @@ hr {
 /* Projects */
 
 .projects {
-  padding: 3rem 0;
-  min-height: 100vh;
-  max-width: 70rem;
+  padding: 50px;
+  max-height: auto;
+  max-width: 110rem;
   margin: auto;
 }
 
@@ -409,7 +410,7 @@ hr {
   margin: 2rem 0;
   background: linear-gradient(
     to right,
-    #9F81F7,
+    #60A3D9,
     #a7e72e
   );
   -webkit-background-clip: text;
@@ -426,13 +427,117 @@ hr {
   margin: 2rem 0;
   font-size: 1.4rem;
 }
+.headp h1{
+  text-align: center;
+  font-size: 3rem;
+  margin: 2rem 0;
+  background: linear-gradient(
+    to right,
+    #60A3D9,
+    #a7e72e
+  );
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+.flip-card {
+  background-color: transparent;
+  width: 350px;
+  height: 500px;
+  perspective: 1000px;
+  box-shadow: 0 4px 8px 0 #B1D4E0;
+  transition: 0.3s;
+  border-radius: 8px;
+}
+
+.flip-card-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  transition: transform 0.6s;
+  transform-style: preserve-3d;
+  box-shadow: 0 4px 8px 0 #B1D4E0;
+  border-radius: 8px;
+}
+
+.flip-card:hover .flip-card-inner {
+  transform: rotateY(180deg);
+}
+
+.flip-card-front, .flip-card-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  border-radius: 8px;
+}
+
+.flip-card-front {
+  background-color:#0074B7;
+  color: black;
+}
+
+.flip-card-back {
+  background-color: #0C2D48;
+  padding: 5px;
+  color: white;
+  font-family: "Share Tech Mono", monospace;
+  font-size: 12px;
+  transform: rotateY(180deg);
+}
+.flip-card-back h1{
+  font-family: "Share Tech Mono", monospace;
+  font-size: 2rem;
+  margin: 2rem 0;
+  background: linear-gradient(
+    to right,
+    #60A3D9,
+    #a7e72e
+  );
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+.flip-card {
+  float:left;
+  justify-content: space-around;
+  margin-left:15px;
+  margin-right:15px;
+  width: 30%;
+  padding: 5px;
+} 
+
+/* Clear floats after the columns */
+.project-description {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/* On screens that are 992px wide or less, go from four columns to two columns */
+@media screen and (max-width: 992px) {
+  .flip-card {
+    width: 50%;
+    float:center;
+    align-items: center;
+  }
+}
+
+/* On screens that are 600px wide or less, make the columns stack on top of each other instead of next to each other */
+@media screen and (max-width: 600px) {
+  .flip-card {
+    width: 100%;
+    float:center;
+    align-items: center;
+  }
+}
 
 /* Contact */
 
 .contact {
   width: 100%;
   min-height: 100vh;
-  max-width: 70rem;
+  max-width: 90rem;
   margin: auto;
   padding-top: 5rem;
 }
@@ -490,7 +595,7 @@ footer a {
 
 /* Responsive Design */
 
-@media (max-width: 750px) {
+@media (max-width: 995px) {
   .main-message h3 {
     font-size: 3rem;
   }
@@ -518,7 +623,7 @@ footer a {
   }
 }
 
-@media (max-width: 665px) {
+@media (max-width: 700px) {
   .main-message {
     top: 55%;
   }
